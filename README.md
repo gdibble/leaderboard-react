@@ -1,2 +1,3 @@
 # leaderboard-react
-Leaderboard using React powered by Next.js
+
+A React leaderboard powered by Next.js
