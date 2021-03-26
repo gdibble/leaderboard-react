@@ -2,6 +2,7 @@ import React from "react"
 import Head from "next/head"
 import styles from "../styles/Header.module.css"
 
+
 const title = "Leaderboard"
 
 const Header = () => (

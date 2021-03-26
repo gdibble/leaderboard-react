@@ -1,5 +1,6 @@
 import React from "react"
 import axios from "axios"
+// import DetailsForm from "./DetailsForm"
 import LeaderboardTable from "./LeaderboardTable"
 
 
@@ -9,7 +10,7 @@ class Leaderboard extends React.Component {
 
     this.state = {
       users: [],
-      sortBy: 'rank',
+      sortBy: "rank",
       isLoading: true,
     }
     this.handleSortBy = this.handleSortBy.bind(this)
@@ -18,22 +19,6 @@ class Leaderboard extends React.Component {
   componentDidMount() {
     const sort = this.state.sortBy
     this.getUserData(sort)
-
-    const table = document.querySelector('table')
-    const tableHeader = document.querySelector('thead')
-    const topOfTableHeader = tableHeader.offsetTop
-
-    function fixHeader() {
-      if (window.scrollY >= topOfTableHeader) {
-        tableHeader.style.width = `${table.clientWidth}px`
-        document.body.style.paddingTop = `${tableHeader.offsetHeight}px`
-        document.body.classList.add('fixed')
-      } else {
-        document.body.style.paddingTop = 0
-        document.body.classList.remove('fixed')
-      }
-    }
-    window.addEventListener('scroll', fixHeader)
   }
 
   getUserData(sort) {
@@ -52,14 +37,15 @@ class Leaderboard extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <>
+        {/* <DetailsForm /> */}
         <LeaderboardTable
           users={this.state.users}
           sortBy={this.state.sortBy}
           onClickSort={this.handleSortBy}
           loading={this.state.isLoading}
         />
-      </div>
+      </>
     )
   }
 }

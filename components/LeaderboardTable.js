@@ -8,7 +8,7 @@ function LeaderboardTable({ users, sortBy, onClickSort, loading }) {
       <thead>
         <tr>
           <th>
-            <button onClick={() => onClickSort('rank')} className={`sort-by ${sortBy !== 'rank' ? 'isNotSelected' : ''}`} >
+            <button onClick={() => onClickSort("rank")} className={`sort-by ${sortBy !== "rank" ? "isNotSelected" : ""}`} >
               Rank
             </button>
           </th>
